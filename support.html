@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Support - ClearEDI</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="dist/images/Logo_small.jpg" type="image/png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #ffffff;
+        color: #4a5568;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      nav {
+        background: #112029;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 20px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-logo img {
+        height: 90px;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 48px;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-links li a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+        position: relative;
+      }
+
+      .nav-links li a:hover {
+        color: #ffffff;
+      }
+
+      .nav-links li a::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #0270d7;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+      }
+
+      .nav-links li a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #cbd5e1;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 16px 0;
+        }
+
+        .nav-logo img {
+          height: 60px;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 280px;
+          height: 100vh;
+          background: #112029;
+          flex-direction: column;
+          gap: 0;
+          padding: 80px 0 40px;
+          transition: right 0.3s ease;
+          box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .nav-links li {
+          width: 100%;
+        }
+
+        .nav-links li a {
+          display: block;
+          padding: 20px 40px;
+          font-size: 16px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links li a::after {
+          display: none;
+        }
+      }
+
+      .content-section {
+        padding: 80px 0 100px;
+      }
+
+      .content-header {
+        text-align: center;
+        margin-bottom: 60px;
+        padding-top: 20px;
+      }
+
+      .content-header h1 {
+        font-size: 48px;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 16px;
+        line-height: 1.2;
+      }
+
+      .content-header p {
+        font-size: 20px;
+        color: #64748b;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .support-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .support-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        margin-bottom: 60px;
+      }
+
+      .support-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 40px;
+        transition: all 0.3s ease;
+      }
+
+      .support-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(37, 99, 235, 0.1);
+        border-color: #0270d7;
+      }
+
+      .support-card h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 16px;
+      }
+
+      .support-card p {
+        font-size: 16px;
+        color: #475569;
+        line-height: 1.7;
+        margin-bottom: 16px;
+      }
+
+      .support-card a {
+        color: #0270d7;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease;
+      }
+
+      .support-card a:hover {
+        border-bottom-color: #0270d7;
+      }
+
+      .contact-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .contact-icon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0270d7;
+      }
+
+      .form-section {
+        background: #f8fafc;
+        border-radius: 16px;
+        padding: 48px;
+        margin-top: 48px;
+      }
+
+      .form-section h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 24px;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #334155;
+        margin-bottom: 8px;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 16px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-family: inherit;
+        transition: border-color 0.2s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: #0270d7;
+      }
+
+      .form-group textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background: #0270d7;
+        color: #ffffff;
+        padding: 14px 32px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background: #025aa5;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(2, 112, 215, 0.2);
+      }
+
+      .amazon-section {
+        background: #f8fafc;
+        border-left: 4px solid #0270d7;
+        padding: 32px;
+        margin: 48px 0;
+        border-radius: 8px;
+      }
+
+      .amazon-section h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #0270d7;
+        margin-bottom: 20px;
+      }
+
+      .amazon-section p {
+        font-size: 16px;
+        color: #475569;
+        line-height: 1.8;
+        margin-bottom: 16px;
+      }
+
+      .amazon-section ul {
+        margin-left: 24px;
+        margin-bottom: 16px;
+      }
+
+      .amazon-section li {
+        font-size: 16px;
+        color: #475569;
+        line-height: 1.8;
+        margin-bottom: 8px;
+      }
+
+      footer {
+        background: #f8fafc;
+        padding: 48px 0;
+        text-align: center;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      footer p {
+        font-size: 15px;
+        color: #64748b;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 24px;
+        }
+
+        .content-section {
+          padding: 60px 0 80px;
+        }
+
+        .content-header h1 {
+          font-size: 36px;
+        }
+
+        .support-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .form-section {
+          padding: 32px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="index.html"
+              ><img src="dist/images/LogoSmall.png" alt="ClearEDI Logo"
+            /></a>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#edi-features">EDI</a></li>
+            <li><a href="index.html#ecommerce">eCommerce</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="content-header">
+          <h1>Support & Contact</h1>
+          <p>
+            We're here to help you succeed with ClearEDI. Reach out for
+            technical support, sales inquiries, or general questions.
+          </p>
+        </div>
+
+        <div class="support-content">
+          <div class="support-grid">
+            <div class="support-card">
+              <h2>General Inquiries</h2>
+              <p>
+                Questions about ClearEDI services, pricing, or getting started?
+              </p>
+              <div class="contact-info">
+                <div class="contact-icon">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <a href="mailto:contact@clearedi.io">contact@clearedi.io</a>
+              </div>
+            </div>
+
+            <div class="support-card">
+              <h2>Technical Support</h2>
+              <p>
+                Need help with EDI integrations, API access, or platform
+                features?
+              </p>
+              <div class="contact-info">
+                <div class="contact-icon">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <a href="mailto:contact@clearedi.io">contact@clearedi.io</a>
+              </div>
+              <p style="margin-top: 16px">
+                <strong>For Active Customers:</strong> You have a dedicated
+                support phone number provided in your welcome email.
+              </p>
+            </div>
+
+            <div class="support-card">
+              <h2>Security & Privacy</h2>
+              <p>
+                Report security incidents, vulnerabilities, or data privacy
+                concerns.
+              </p>
+              <div class="contact-info">
+                <div class="contact-icon">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                </div>
+                <a href="mailto:security@clearedi.io">security@clearedi.io</a>
+              </div>
+              <p style="margin-top: 8px; color: #dc2626; font-weight: 600">
+                Security incidents: Report within 24 hours
+              </p>
+            </div>
+
+            <div class="support-card">
+              <h2>Privacy Requests</h2>
+              <p>
+                Exercise your data subject rights (GDPR, CCPA) or
+                privacy-related inquiries.
+              </p>
+              <div class="contact-info">
+                <div class="contact-icon">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                </div>
+                <a href="mailto:privacy@clearedi.io">privacy@clearedi.io</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="amazon-section">
+            <h2>Amazon Seller Central Integration Support</h2>
+            <p>
+              Need help with your Amazon Seller Central integration? We provide
+              specialized support for Amazon SP-API connections.
+            </p>
+            <p><strong>Common Amazon Integration Topics:</strong></p>
+            <ul>
+              <li>OAuth authorization and account connection issues</li>
+              <li>Order synchronization and fulfillment status updates</li>
+              <li>Inventory management and product listing sync</li>
+              <li>Marketplace selection and multi-region setup</li>
+              <li>
+                SP-API authentication, token renewal, and credential management
+              </li>
+              <li>Data mapping and Amazon-specific EDI requirements</li>
+              <li>Compliance with Amazon Data Protection Policy (DPP)</li>
+            </ul>
+            <p>
+              <strong>Important:</strong> Amazon integration support is
+              available to active ClearEDI customers. For SP-API-related
+              security incidents or data breaches affecting Amazon Seller data,
+              contact
+              <a href="mailto:security@clearedi.io">security@clearedi.io</a>
+              immediately (within 24 hours as required by Amazon DPP).
+            </p>
+            <p>
+              <strong>Amazon-Specific Resources:</strong><br />
+              For general Amazon Seller Central questions not related to
+              ClearEDI integration, visit
+              <a
+                href="https://sellercentral.amazon.com/help/hub"
+                target="_blank"
+                >Amazon Seller Central Help</a
+              >.
+            </p>
+          </div>
+
+          <div class="form-section">
+            <h2>Send Us a Message</h2>
+            <form
+              action="https://formspree.io/f/xqaopwze"
+              method="POST"
+              id="contactForm"
+            >
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="your.email@company.com"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Your company name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a topic</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="sales">Sales & Pricing</option>
+                  <option value="technical">Technical Support</option>
+                  <option value="amazon">Amazon Integration</option>
+                  <option value="billing">Billing & Payments</option>
+                  <option value="security">Security Issue</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Tell us how we can help..."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+
+          <div
+            style="
+              margin-top: 60px;
+              padding: 32px;
+              background: #f8fafc;
+              border-radius: 12px;
+              text-align: center;
+            "
+          >
+            <h3 style="font-size: 20px; color: #1e293b; margin-bottom: 12px">
+              Support Hours
+            </h3>
+            <p style="font-size: 16px; color: #475569; line-height: 1.8">
+              <strong>Email Support:</strong> Monday - Friday, 9:00 AM - 6:00 PM
+              PST<br />
+              <strong>Dedicated Phone Support:</strong> Available to active
+              customers 24/7<br />
+              <strong>Emergency Security Hotline:</strong> 24/7 via
+              <a href="mailto:security@clearedi.io">security@clearedi.io</a>
+            </p>
+            <p
+              style="
+                font-size: 14px;
+                color: #64748b;
+                margin-top: 16px;
+                font-style: italic;
+              "
+            >
+              Response time for general inquiries: 1-2 business days<br />
+              Critical technical issues: Same-day response for active customers
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 ClearEDI Inc. All rights reserved.</p>
+        <p style="margin-top: 8px">
+          <a href="privacy-policy.html" style="color: #0270d7; margin: 0 12px"
+            >Privacy Policy</a
+          >
+          |
+          <a href="terms-of-service.html" style="color: #0270d7; margin: 0 12px"
+            >Terms of Service</a
+          >
+          |
+          <a href="acceptable-use.html" style="color: #0270d7; margin: 0 12px"
+            >Acceptable Use</a
+          >
+          |
+          <a href="support.html" style="color: #0270d7; margin: 0 12px"
+            >Support</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

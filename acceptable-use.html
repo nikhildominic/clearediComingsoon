@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Acceptable Use Policy - ClearEDI</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="dist/images/Logo_small.jpg" type="image/png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #ffffff;
+        color: #4a5568;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      nav {
+        background: #112029;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 20px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-logo img {
+        height: 90px;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 48px;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-links li a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+        position: relative;
+      }
+
+      .nav-links li a:hover {
+        color: #ffffff;
+      }
+
+      .nav-links li a::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #0270d7;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+      }
+
+      .nav-links li a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #cbd5e1;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 16px 0;
+        }
+
+        .nav-logo img {
+          height: 60px;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 280px;
+          height: 100vh;
+          background: #112029;
+          flex-direction: column;
+          gap: 0;
+          padding: 80px 0 40px;
+          transition: right 0.3s ease;
+          box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .nav-links li {
+          width: 100%;
+        }
+
+        .nav-links li a {
+          display: block;
+          padding: 20px 40px;
+          font-size: 16px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links li a::after {
+          display: none;
+        }
+      }
+
+      .content-section {
+        padding: 80px 0 100px;
+      }
+
+      .content-header {
+        text-align: center;
+        margin-bottom: 60px;
+        padding-top: 20px;
+      }
+
+      .content-header h1 {
+        font-size: 48px;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 16px;
+        line-height: 1.2;
+      }
+
+      .content-header .date {
+        font-size: 16px;
+        color: #64748b;
+      }
+
+      .legal-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .legal-content h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-top: 48px;
+        margin-bottom: 20px;
+      }
+
+      .legal-content h3 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #334155;
+        margin-top: 32px;
+        margin-bottom: 16px;
+      }
+
+      .legal-content p {
+        font-size: 16px;
+        color: #475569;
+        line-height: 1.8;
+        margin-bottom: 16px;
+      }
+
+      .legal-content ul,
+      .legal-content ol {
+        margin-left: 24px;
+        margin-bottom: 16px;
+      }
+
+      .legal-content li {
+        font-size: 16px;
+        color: #475569;
+        line-height: 1.8;
+        margin-bottom: 8px;
+      }
+
+      .legal-content strong {
+        font-weight: 600;
+        color: #1e293b;
+      }
+
+      .legal-content a {
+        color: #0270d7;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease;
+      }
+
+      .legal-content a:hover {
+        border-bottom-color: #0270d7;
+      }
+
+      .amazon-section {
+        background: #f8fafc;
+        border-left: 4px solid #0270d7;
+        padding: 24px;
+        margin: 32px 0;
+        border-radius: 8px;
+      }
+
+      .amazon-section h3 {
+        margin-top: 0;
+        color: #0270d7;
+      }
+
+      .violation-warning {
+        background: #fef2f2;
+        border-left: 4px solid #dc2626;
+        padding: 24px;
+        margin: 32px 0;
+        border-radius: 8px;
+      }
+
+      .violation-warning h3 {
+        margin-top: 0;
+        color: #dc2626;
+      }
+
+      footer {
+        background: #f8fafc;
+        padding: 48px 0;
+        text-align: center;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      footer p {
+        font-size: 15px;
+        color: #64748b;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 24px;
+        }
+
+        .content-section {
+          padding: 60px 0 80px;
+        }
+
+        .content-header h1 {
+          font-size: 36px;
+        }
+
+        .legal-content h2 {
+          font-size: 24px;
+        }
+
+        .legal-content h3 {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="index.html"
+              ><img src="dist/images/LogoSmall.png" alt="ClearEDI Logo"
+            /></a>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#edi-features">EDI</a></li>
+            <li><a href="index.html#ecommerce">eCommerce</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="content-header">
+          <h1>Acceptable Use Policy</h1>
+          <p class="date">Effective Date: November 1, 2025</p>
+        </div>
+
+        <div class="legal-content">
+          <h2>1. Introduction</h2>
+          <p>
+            This Acceptable Use Policy ("AUP") governs your use of the ClearEDI
+            platform and related services (the "Services"). This AUP is
+            incorporated into and forms part of our
+            <a href="terms-of-service.html">Terms of Service</a>.
+          </p>
+          <p>
+            By using the Services, you agree to comply with this AUP. Violation
+            of this policy may result in suspension or termination of your
+            access to the Services, and in some cases, legal action.
+          </p>
+          <p>
+            <strong>Company Information:</strong><br />
+            ClearEDI Inc.<br />
+            115 Garfield St. #21897<br />
+            Sumas, WA 98295<br />
+            Email: <a href="mailto:contact@clearedi.io">contact@clearedi.io</a>
+          </p>
+
+          <h2>2. Scope and Application</h2>
+          <p>This AUP applies to:</p>
+          <ul>
+            <li>All users of the ClearEDI platform</li>
+            <li>
+              All data processed through our Services, including EDI documents,
+              API requests, and eCommerce integrations
+            </li>
+            <li>All connectivity methods (SFTP, AS2, REST API)</li>
+            <li>
+              Third-party integrations (Amazon Seller Central, Shopify, etc.)
+            </li>
+          </ul>
+
+          <h2>3. General Prohibited Activities</h2>
+          <p>
+            You may not use the Services to engage in, facilitate, or promote
+            any of the following activities:
+          </p>
+
+          <h3>3.1 Illegal Activities</h3>
+          <ul>
+            <li>
+              Violating any applicable local, state, national, or international
+              law or regulation
+            </li>
+            <li>
+              Facilitating or promoting illegal activities, including fraud,
+              money laundering, or sale of illegal goods
+            </li>
+            <li>
+              Infringing on intellectual property rights, including copyrights,
+              trademarks, patents, or trade secrets
+            </li>
+            <li>
+              Transmitting or storing material that is defamatory, obscene,
+              threatening, harassing, or otherwise unlawful
+            </li>
+          </ul>
+
+          <h3>3.2 Security Violations</h3>
+          <ul>
+            <li>
+              Unauthorized access to or use of systems, networks, data, or
+              accounts belonging to ClearEDI or third parties
+            </li>
+            <li>
+              Probing, scanning, or testing the vulnerability of any system or
+              network without authorization
+            </li>
+            <li>
+              Breaching or circumventing authentication or security measures
+            </li>
+            <li>
+              Intercepting or monitoring data not intended for you without
+              authorization
+            </li>
+            <li>
+              Sharing account credentials or allowing unauthorized access to
+              your account
+            </li>
+            <li>
+              Using automated tools to access the Services in a manner that
+              exceeds reasonable request volume
+            </li>
+          </ul>
+
+          <h3>3.3 Malicious Code and Attacks</h3>
+          <ul>
+            <li>
+              Transmitting viruses, worms, Trojan horses, malware, spyware, or
+              other harmful code
+            </li>
+            <li>
+              Launching denial-of-service (DoS) or distributed
+              denial-of-service (DDoS) attacks
+            </li>
+            <li>
+              Engaging in activities that disrupt, degrade, or interfere with
+              the Services or infrastructure
+            </li>
+            <li>
+              Creating, hosting, or distributing ransomware or other extortion
+              software
+            </li>
+          </ul>
+
+          <h3>3.4 Spam and Abuse</h3>
+          <ul>
+            <li>
+              Sending unsolicited bulk email, messages, or communications
+              (spam)
+            </li>
+            <li>
+              Phishing, pharming, or engaging in identity theft or deceptive
+              practices
+            </li>
+            <li>Operating pyramid schemes or multi-level marketing scams</li>
+            <li>
+              Harvesting or collecting email addresses or personal information
+              without consent
+            </li>
+          </ul>
+
+          <h3>3.5 Abuse of Services</h3>
+          <ul>
+            <li>
+              Using the Services in a manner that exceeds reasonable usage
+              limits or degrades performance for other users
+            </li>
+            <li>
+              Reselling or redistributing the Services without authorization
+            </li>
+            <li>
+              Reverse engineering, decompiling, or attempting to extract source
+              code from the Services
+            </li>
+            <li>
+              Removing, obscuring, or altering any proprietary notices or labels
+            </li>
+            <li>
+              Using the Services to develop competing products or services
+            </li>
+          </ul>
+
+          <h3>3.6 Data Misuse</h3>
+          <ul>
+            <li>
+              Accessing, using, or disclosing data belonging to other users
+              without authorization
+            </li>
+            <li>
+              Storing or transmitting personally identifiable information (PII)
+              in violation of applicable privacy laws
+            </li>
+            <li>
+              Failing to implement reasonable security measures to protect
+              sensitive data
+            </li>
+            <li>
+              Retaining data longer than necessary or as permitted by applicable
+              laws and policies
+            </li>
+          </ul>
+
+          <div class="amazon-section">
+            <h2>4. Amazon SP-API Specific Requirements</h2>
+            <p>
+              If you use our Amazon Seller Central integration, you must comply
+              with Amazon's Acceptable Use Policy and Data Protection Policy, in
+              addition to this AUP. The following activities are strictly
+              prohibited:
+            </p>
+
+            <h3>4.1 Data Usage Restrictions</h3>
+            <ul>
+              <li>
+                <strong>No AI/ML Training:</strong> Using Amazon data to
+                develop, train, or improve large language models (LLMs),
+                multimodal models, or other machine learning systems
+              </li>
+              <li>
+                <strong>No Data Mining:</strong> Employing data mining, robots,
+                scrapers, or similar data extraction tools on Amazon data
+              </li>
+              <li>
+                <strong>No Unauthorized Derivatives:</strong> Creating
+                derivative works from Amazon data without explicit authorization
+              </li>
+              <li>
+                <strong>No Third-Party Sales:</strong> Selling, renting, or
+                disclosing Amazon data to third parties for marketing or other
+                unauthorized purposes
+              </li>
+            </ul>
+
+            <h3>4.2 PII Retention and Handling</h3>
+            <ul>
+              <li>
+                <strong>30-Day Limit:</strong> Retaining Amazon customer
+                personally identifiable information (PII) for longer than 30
+                days after order delivery, except as required by law for tax
+                compliance
+              </li>
+              <li>
+                <strong>Unauthorized Use:</strong> Using Amazon PII for purposes
+                other than order fulfillment, tax calculation, or legal
+                compliance
+              </li>
+              <li>
+                <strong>Inadequate Protection:</strong> Transmitting or storing
+                Amazon PII without appropriate encryption (TLS 1.2+ in transit,
+                AES-128+ at rest)
+              </li>
+            </ul>
+
+            <h3>4.3 SP-API Restrictions</h3>
+            <ul>
+              <li>
+                Exceeding SP-API rate limits or making excessive API calls
+              </li>
+              <li>
+                Misrepresenting your relationship with Amazon or using Amazon
+                trademarks without authorization
+              </li>
+              <li>
+                Violating Amazon's partner agreements, seller policies, or
+                marketplace terms
+              </li>
+              <li>
+                Serving partners you know or suspect will violate Amazon
+                policies
+              </li>
+            </ul>
+
+            <h3>4.4 Security and Compliance</h3>
+            <ul>
+              <li>
+                Failing to implement required security controls (MFA, firewalls,
+                encryption, vulnerability scanning)
+              </li>
+              <li>
+                Delaying security incident reporting beyond 24 hours
+              </li>
+              <li>
+                Not maintaining audit trails or preventing audit cooperation as
+                required by Amazon DPP
+              </li>
+              <li>
+                Failing to conduct required vulnerability scans (monthly minimum)
+                and penetration tests (annual minimum)
+              </li>
+            </ul>
+          </div>
+
+          <h2>5. Reporting Violations</h2>
+          <p>
+            If you become aware of any violation of this AUP or suspect
+            unauthorized or abusive use of the Services, please report it
+            immediately:
+          </p>
+          <ul>
+            <li>
+              <strong>General Violations:</strong>
+              <a href="mailto:contact@clearedi.io">contact@clearedi.io</a>
+            </li>
+            <li>
+              <strong>Security Incidents:</strong>
+              <a href="mailto:security@clearedi.io">security@clearedi.io</a>
+              (within 24 hours for Amazon-related incidents)
+            </li>
+            <li>
+              <strong>Abuse Reports:</strong> Include detailed information,
+              timestamps, and evidence if available
+            </li>
+          </ul>
+
+          <div class="violation-warning">
+            <h3>6. Consequences of Violations</h3>
+            <p>
+              Violations of this AUP may result in one or more of the following
+              actions:
+            </p>
+            <ul>
+              <li>
+                <strong>Warning:</strong> Issuance of a formal warning and
+                requirement to cease prohibited activities immediately
+              </li>
+              <li>
+                <strong>Suspension:</strong> Temporary suspension of access to
+                the Services until the violation is remediated
+              </li>
+              <li>
+                <strong>Termination:</strong> Immediate termination of your
+                account and access to the Services
+              </li>
+              <li>
+                <strong>Data Deletion:</strong> Removal of data associated with
+                prohibited activities
+              </li>
+              <li>
+                <strong>Legal Action:</strong> Pursuit of civil or criminal
+                legal remedies, including injunctions and damages
+              </li>
+              <li>
+                <strong>Law Enforcement Notification:</strong> Reporting
+                violations to appropriate law enforcement authorities
+              </li>
+              <li>
+                <strong>Third-Party Notification:</strong> Reporting violations
+                to affected third parties, including Amazon for SP-API policy
+                violations
+              </li>
+            </ul>
+            <p>
+              <strong>Important:</strong> Violations affecting Amazon Seller
+              Central data may be reported to Amazon in accordance with their
+              Data Protection Policy and may result in termination of your
+              Amazon SP-API access by Amazon.
+            </p>
+          </div>
+
+          <h2>7. Your Responsibilities</h2>
+          <p>As a user of the Services, you are responsible for:</p>
+          <ul>
+            <li>
+              Ensuring that your use of the Services complies with this AUP and
+              all applicable laws
+            </li>
+            <li>
+              Maintaining the security of your account credentials and access
+              controls
+            </li>
+            <li>
+              Monitoring the activity of users accessing the Services under your
+              account
+            </li>
+            <li>
+              Implementing appropriate security measures to protect data
+              processed through the Services
+            </li>
+            <li>
+              Responding promptly to security incidents and cooperating with
+              investigations
+            </li>
+            <li>
+              Notifying ClearEDI immediately if you suspect unauthorized access
+              or policy violations
+            </li>
+          </ul>
+
+          <h2>8. ClearEDI's Rights and Responsibilities</h2>
+          <p>ClearEDI reserves the right to:</p>
+          <ul>
+            <li>
+              Monitor the Services for compliance with this AUP and to protect
+              the security and integrity of our systems
+            </li>
+            <li>
+              Investigate suspected violations and take appropriate action,
+              including suspending or terminating access
+            </li>
+            <li>
+              Remove or disable content that violates this AUP or applicable
+              laws
+            </li>
+            <li>
+              Cooperate with law enforcement and regulatory authorities in
+              investigating violations
+            </li>
+            <li>
+              Modify this AUP from time to time with notice to users (see
+              Section 10)
+            </li>
+          </ul>
+          <p>
+            ClearEDI is not obligated to monitor user activity but may do so to
+            protect the Services and comply with legal obligations.
+          </p>
+
+          <h2>9. Compliance with Third-Party Policies</h2>
+          <p>
+            When using integrations with third-party platforms (such as Amazon
+            Seller Central, Shopify, or trading partner systems), you must
+            comply with their respective acceptable use policies, terms of
+            service, and data protection requirements. ClearEDI is not
+            responsible for enforcing third-party policies but may terminate
+            your access if your violations impact our relationship with those
+            partners.
+          </p>
+          <p>Key third-party policies to review:</p>
+          <ul>
+            <li>
+              Amazon: Data Protection Policy (DPP), Acceptable Use Policy (AUP),
+              SP-API Developer Agreement
+            </li>
+            <li>Shopify: API Terms of Service, Partner Program Agreement</li>
+            <li>
+              Trading partners: Individual EDI agreements and data handling
+              requirements
+            </li>
+          </ul>
+
+          <h2>10. Changes to This Policy</h2>
+          <p>
+            ClearEDI may update this Acceptable Use Policy from time to time.
+            Material changes will be communicated via email or through the
+            Services at least 30 days before the effective date. Continued use
+            of the Services after the effective date constitutes acceptance of
+            the updated policy.
+          </p>
+          <p>
+            <strong>Last Updated:</strong> November 1, 2025
+          </p>
+
+          <h2>11. Contact Information</h2>
+          <p>
+            For questions about this Acceptable Use Policy or to report
+            violations:
+          </p>
+          <p>
+            <strong>General Inquiries:</strong>
+            <a href="mailto:contact@clearedi.io">contact@clearedi.io</a><br />
+            <strong>Security Incidents:</strong>
+            <a href="mailto:security@clearedi.io">security@clearedi.io</a><br />
+            <strong>Mail:</strong> ClearEDI Inc., 115 Garfield St. #21897,
+            Sumas, WA 98295<br />
+            <strong>Support:</strong>
+            <a href="support.html">Contact Support</a>
+          </p>
+
+          <h2>12. Relationship to Terms of Service</h2>
+          <p>
+            This Acceptable Use Policy is incorporated into and forms part of
+            our <a href="terms-of-service.html">Terms of Service</a>. In the
+            event of any conflict between this AUP and the Terms of Service, the
+            Terms of Service shall prevail. Both documents should be read
+            together as a single agreement governing your use of the Services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 ClearEDI Inc. All rights reserved.</p>
+        <p style="margin-top: 8px">
+          <a href="privacy-policy.html" style="color: #0270d7; margin: 0 12px"
+            >Privacy Policy</a
+          >
+          |
+          <a href="terms-of-service.html" style="color: #0270d7; margin: 0 12px"
+            >Terms of Service</a
+          >
+          |
+          <a
+            href="acceptable-use.html"
+            style="color: #0270d7; margin: 0 12px"
+            >Acceptable Use</a
+          >
+          |
+          <a href="support.html" style="color: #0270d7; margin: 0 12px"
+            >Support</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

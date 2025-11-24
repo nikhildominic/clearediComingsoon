@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Terms of Service - ClearEDI</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="dist/images/Logo_small.jpg" type="image/png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #ffffff;
+        color: #4a5568;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      nav {
+        background: #112029;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 20px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-logo img {
+        height: 90px;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 48px;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-links li a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+        position: relative;
+      }
+
+      .nav-links li a:hover {
+        color: #ffffff;
+      }
+
+      .nav-links li a::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #0270d7;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+      }
+
+      .nav-links li a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #cbd5e1;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 16px 0;
+        }
+
+        .nav-logo img {
+          height: 60px;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 280px;
+          height: 100vh;
+          background: #112029;
+          flex-direction: column;
+          gap: 0;
+          padding: 80px 0 40px;
+          transition: right 0.3s ease;
+          box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .nav-links li {
+          width: 100%;
+        }
+
+        .nav-links li a {
+          display: block;
+          padding: 20px 40px;
+          font-size: 16px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links li a::after {
+          display: none;
+        }
+      }
+
+      .content-section {
+        padding: 80px 0 100px;
+      }
+
+      .content-header {
+        text-align: center;
+        margin-bottom: 60px;
+        padding-top: 20px;
+      }
+
+      .content-header h1 {
+        font-size: 48px;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 16px;
+        line-height: 1.2;
+      }
+
+      .content-header .date {
+        font-size: 16px;
+        color: #64748b;
+      }
+
+      .legal-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .legal-content h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-top: 48px;
+        margin-bottom: 20px;
+      }
+
+      .legal-content h3 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #334155;
+        margin-top: 32px;
+        margin-bottom: 16px;
+      }
+
+      .legal-content p {
+        font-size: 16px;
+        color: #475569;
+        line-height: 1.8;
+        margin-bottom: 16px;
+      }
+
+      .legal-content ul,
+      .legal-content ol {
+        margin-left: 24px;
+        margin-bottom: 16px;
+      }
+
+      .legal-content li {
+        font-size: 16px;
+        color: #475569;
+        line-height: 1.8;
+        margin-bottom: 8px;
+      }
+
+      .legal-content strong {
+        font-weight: 600;
+        color: #1e293b;
+      }
+
+      .legal-content a {
+        color: #0270d7;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease;
+      }
+
+      .legal-content a:hover {
+        border-bottom-color: #0270d7;
+      }
+
+      .amazon-section {
+        background: #f8fafc;
+        border-left: 4px solid #0270d7;
+        padding: 24px;
+        margin: 32px 0;
+        border-radius: 8px;
+      }
+
+      .amazon-section h3 {
+        margin-top: 0;
+        color: #0270d7;
+      }
+
+      footer {
+        background: #f8fafc;
+        padding: 48px 0;
+        text-align: center;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      footer p {
+        font-size: 15px;
+        color: #64748b;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 24px;
+        }
+
+        .content-section {
+          padding: 60px 0 80px;
+        }
+
+        .content-header h1 {
+          font-size: 36px;
+        }
+
+        .legal-content h2 {
+          font-size: 24px;
+        }
+
+        .legal-content h3 {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="index.html"
+              ><img src="dist/images/LogoSmall.png" alt="ClearEDI Logo"
+            /></a>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#edi-features">EDI</a></li>
+            <li><a href="index.html#ecommerce">eCommerce</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="content-header">
+          <h1>Terms of Service</h1>
+          <p class="date">Effective Date: November 1, 2025</p>
+        </div>
+
+        <div class="legal-content">
+          <h2>1. Acceptance of Terms</h2>
+          <p>
+            These Terms of Service ("Terms") constitute a legally binding
+            agreement between you ("Customer", "you", or "your") and ClearEDI
+            Inc. ("ClearEDI", "we", "us", or "our") governing your use of the
+            ClearEDI platform and related services (the "Services").
+          </p>
+          <p>
+            By accessing or using the Services, you agree to be bound by these
+            Terms. If you do not agree, you may not use the Services.
+          </p>
+          <p>
+            <strong>Company Information:</strong><br />
+            ClearEDI Inc.<br />
+            115 Garfield St. #21897<br />
+            Sumas, WA 98295<br />
+            Email: <a href="mailto:contact@clearedi.io">contact@clearedi.io</a>
+          </p>
+
+          <h2>2. Service Description</h2>
+          <p>
+            ClearEDI provides a cloud-based enterprise EDI integration platform
+            that enables electronic data interchange between businesses and
+            their trading partners. Our Services include:
+          </p>
+          <ul>
+            <li>
+              <strong>EDI Transaction Processing:</strong> Support for X12 and
+              EDIFACT standards, parsing, validation, and generation of EDI
+              documents
+            </li>
+            <li>
+              <strong>Connectivity Options:</strong> SFTP (managed and
+              customer-hosted), AS2 protocol, REST API integration
+            </li>
+            <li>
+              <strong>Document Management:</strong> Transaction tracking,
+              functional acknowledgement generation, partner relationship
+              management
+            </li>
+            <li>
+              <strong>eCommerce Platform Integrations:</strong> Amazon Seller
+              Central, Shopify, and other marketplace connectors
+            </li>
+            <li>
+              <strong>API Access:</strong> RESTful API for programmatic access,
+              webhook notifications, machine-to-machine authentication
+            </li>
+          </ul>
+
+          <h2>3. License Grant</h2>
+
+          <h3>3.1 Limited License</h3>
+          <p>
+            Subject to your compliance with these Terms, ClearEDI grants you a
+            limited, non-exclusive, non-transferable, non-sublicensable,
+            revocable license to access and use the Services for your internal
+            business purposes during the subscription term.
+          </p>
+
+          <h3>3.2 License Restrictions</h3>
+          <p>You may not:</p>
+          <ul>
+            <li>
+              Copy, modify, adapt, translate, or create derivative works of the
+              Services
+            </li>
+            <li>Reverse engineer, decompile, or disassemble the Services</li>
+            <li>
+              Rent, lease, sell, sublicense, or transfer your access to the
+              Services
+            </li>
+            <li>
+              Use the Services to develop competing products or services
+            </li>
+            <li>
+              Remove, obscure, or alter any proprietary notices on the Services
+            </li>
+            <li>
+              Use the Services in violation of applicable laws or regulations
+            </li>
+          </ul>
+
+          <h2>4. Acceptable Use Policy</h2>
+          <p>
+            You agree to use the Services in compliance with our
+            <a href="acceptable-use.html">Acceptable Use Policy</a> and all
+            applicable laws. Prohibited activities include:
+          </p>
+          <ul>
+            <li>
+              Unauthorized access to systems, networks, or data of ClearEDI or
+              third parties
+            </li>
+            <li>
+              Transmitting malware, viruses, or other harmful code
+            </li>
+            <li>
+              Engaging in fraud, spam, phishing, or other deceptive practices
+            </li>
+            <li>
+              Interfering with or disrupting the Services or servers
+            </li>
+            <li>
+              Violating intellectual property rights of ClearEDI or third
+              parties
+            </li>
+            <li>
+              Using the Services for illegal purposes or to facilitate illegal
+              activities
+            </li>
+          </ul>
+          <p>
+            See our complete
+            <a href="acceptable-use.html">Acceptable Use Policy</a> for details.
+          </p>
+
+          <div class="amazon-section">
+            <h3>4.1 Amazon SP-API Compliance</h3>
+            <p>
+              If you use our Amazon Seller Central integration, you agree to
+              comply with:
+            </p>
+            <ul>
+              <li>
+                Amazon's Data Protection Policy (DPP) and Acceptable Use Policy
+                (AUP)
+              </li>
+              <li>Amazon Services API Developer Agreement</li>
+              <li>Amazon Selling Partner API policies and guidelines</li>
+            </ul>
+            <p>Prohibited activities specific to Amazon integration:</p>
+            <ul>
+              <li>
+                Using Amazon data to develop or train large language models or
+                AI systems
+              </li>
+              <li>
+                Data mining, scraping, or unauthorized extraction of Amazon data
+              </li>
+              <li>
+                Retaining Amazon PII beyond 30 days after order delivery (except
+                as legally required)
+              </li>
+              <li>
+                Sharing or selling Amazon data to third parties without
+                authorization
+              </li>
+            </ul>
+          </div>
+
+          <h2>5. Pricing and Payment</h2>
+
+          <h3>5.1 Quote-Based Pricing</h3>
+          <p>
+            ClearEDI operates on a quote-based pricing model tailored to each
+            customer's specific needs, including:
+          </p>
+          <ul>
+            <li>Transaction volume and document types</li>
+            <li>Number of trading partners and connectivity requirements</li>
+            <li>eCommerce platform integrations</li>
+            <li>Support level and service-level agreements</li>
+          </ul>
+          <p>
+            Contact us at
+            <a href="mailto:contact@clearedi.io">contact@clearedi.io</a> for a
+            customized quote.
+          </p>
+
+          <h3>5.2 Payment Terms</h3>
+          <p>
+            Unless otherwise specified in your agreement, invoices are due
+            within 30 days of the invoice date. Late payments may incur interest
+            charges at the rate of 1.5% per month or the maximum rate permitted
+            by law, whichever is lower.
+          </p>
+
+          <h3>5.3 Taxes</h3>
+          <p>
+            Fees are exclusive of all applicable taxes, duties, and governmental
+            charges. You are responsible for all such taxes (except taxes based
+            on ClearEDI's income).
+          </p>
+
+          <h2>6. User Data and Intellectual Property</h2>
+
+          <h3>6.1 Your Data</h3>
+          <p>
+            You retain all rights, title, and interest in and to your data,
+            including EDI documents, business information, and customer data
+            ("Customer Data"). You grant ClearEDI a limited license to process
+            Customer Data solely to provide the Services.
+          </p>
+
+          <h3>6.2 ClearEDI Intellectual Property</h3>
+          <p>
+            ClearEDI retains all rights, title, and interest in the Services,
+            including all software, documentation, trademarks, and intellectual
+            property. These Terms do not grant you any ownership rights in the
+            Services.
+          </p>
+
+          <h3>6.3 Feedback</h3>
+          <p>
+            If you provide suggestions, ideas, or feedback about the Services,
+            ClearEDI may use such feedback without any obligation to you.
+          </p>
+
+          <h2>7. Data Protection and Privacy</h2>
+
+          <h3>7.1 Privacy Policy</h3>
+          <p>
+            Our collection, use, and protection of your personal information is
+            governed by our
+            <a href="privacy-policy.html">Privacy Policy</a>, which is
+            incorporated into these Terms by reference.
+          </p>
+
+          <h3>7.2 Data Processing Agreement</h3>
+          <p>
+            To the extent ClearEDI processes personal data on your behalf,
+            ClearEDI acts as a data processor and you act as the data
+            controller. We process such data in accordance with applicable data
+            protection laws, including GDPR and CCPA.
+          </p>
+
+          <h3>7.3 Data Security</h3>
+          <p>
+            ClearEDI implements industry-standard security measures to protect
+            your data, including:
+          </p>
+          <ul>
+            <li>Encryption in transit (TLS 1.2+) and at rest (AES-256)</li>
+            <li>Multi-factor authentication and role-based access controls</li>
+            <li>Regular vulnerability scanning and penetration testing</li>
+            <li>24-hour security incident notification procedures</li>
+          </ul>
+
+          <div class="amazon-section">
+            <h3>7.4 Amazon Data Protection Requirements</h3>
+            <p>
+              For Amazon Seller Central integration, ClearEDI complies with
+              Amazon's Data Protection Policy, including:
+            </p>
+            <ul>
+              <li>
+                PII retention limited to 30 days after order delivery (except as
+                legally required)
+              </li>
+              <li>
+                Encryption: TLS 1.2+ (transit), AES-128+ (at rest), secure key
+                management
+              </li>
+              <li>Network security: firewalls, segmentation, intrusion detection</li>
+              <li>
+                Access controls: MFA, unique user IDs, quarterly access reviews
+              </li>
+              <li>
+                Vulnerability management: monthly scans, annual penetration tests
+              </li>
+              <li>24-hour security incident reporting to Amazon</li>
+              <li>Annual security awareness training for authorized personnel</li>
+            </ul>
+          </div>
+
+          <h2>8. Service Level and Warranties</h2>
+
+          <h3>8.1 Service Availability</h3>
+          <p>
+            ClearEDI strives to maintain high availability but does not
+            guarantee uninterrupted or error-free service. Scheduled maintenance
+            windows will be communicated in advance when possible.
+          </p>
+
+          <h3>8.2 Disclaimer of Warranties</h3>
+          <p>
+            THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT
+            WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
+            LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+            PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+          </p>
+          <p>
+            ClearEDI does not warrant that the Services will meet your
+            requirements, be uninterrupted, timely, secure, or error-free, or
+            that defects will be corrected.
+          </p>
+
+          <h2>9. Limitation of Liability</h2>
+
+          <h3>9.1 Exclusion of Consequential Damages</h3>
+          <p>
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW, CLEAREDI SHALL NOT BE LIABLE
+            FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE
+            DAMAGES, INCLUDING LOST PROFITS, LOST DATA, OR BUSINESS
+            INTERRUPTION, ARISING OUT OF OR RELATED TO THESE TERMS OR THE
+            SERVICES, REGARDLESS OF THE THEORY OF LIABILITY.
+          </p>
+
+          <h3>9.2 Liability Cap</h3>
+          <p>
+            CLEAREDI'S TOTAL LIABILITY ARISING OUT OF OR RELATED TO THESE TERMS
+            OR THE SERVICES SHALL NOT EXCEED THE AMOUNT PAID BY YOU TO CLEAREDI
+            IN THE 12 MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY.
+          </p>
+
+          <h3>9.3 Exceptions</h3>
+          <p>
+            The limitations in this Section do not apply to: (a) liability for
+            death or personal injury caused by negligence; (b) fraud or
+            fraudulent misrepresentation; or (c) any other liability that cannot
+            be excluded or limited under applicable law.
+          </p>
+
+          <h2>10. Indemnification</h2>
+          <p>
+            You agree to indemnify, defend, and hold harmless ClearEDI and its
+            officers, directors, employees, and agents from any claims, losses,
+            damages, liabilities, costs, and expenses (including reasonable
+            attorneys' fees) arising out of or related to:
+          </p>
+          <ul>
+            <li>Your use of the Services</li>
+            <li>Your violation of these Terms or applicable laws</li>
+            <li>Your Customer Data or any third-party claims related to it</li>
+            <li>Your violation of third-party rights</li>
+          </ul>
+
+          <h2>11. Term and Termination</h2>
+
+          <h3>11.1 Subscription Term</h3>
+          <p>
+            Your subscription begins on the start date specified in your
+            agreement and continues for the agreed term, unless terminated
+            earlier in accordance with these Terms.
+          </p>
+
+          <h3>11.2 Termination for Cause</h3>
+          <p>
+            Either party may terminate if the other party materially breaches
+            these Terms and fails to cure within 30 days of written notice.
+            ClearEDI may suspend or terminate your access immediately for:
+          </p>
+          <ul>
+            <li>Non-payment of fees</li>
+            <li>Violation of the Acceptable Use Policy</li>
+            <li>Fraudulent activity or security threats</li>
+            <li>
+              Activities that could harm ClearEDI, other users, or third parties
+            </li>
+          </ul>
+
+          <h3>11.3 Effect of Termination</h3>
+          <p>
+            Upon termination, your access to the Services will cease. You remain
+            responsible for all fees incurred prior to termination. ClearEDI
+            will retain your data for 30 days to allow for data retrieval,
+            after which it will be securely deleted.
+          </p>
+
+          <div class="amazon-section">
+            <h3>11.4 Amazon Integration Termination</h3>
+            <p>
+              Upon termination of Amazon Seller Central integration or these
+              Terms, ClearEDI will immediately cease access to Amazon SP-API and
+              delete all Amazon PII within 30 days (or immediately if required
+              by Amazon).
+            </p>
+          </div>
+
+          <h2>12. Confidentiality</h2>
+          <p>
+            Each party agrees to maintain the confidentiality of the other
+            party's confidential information and use it only to perform
+            obligations under these Terms. This obligation survives termination
+            for three years.
+          </p>
+          <p>
+            Confidential information does not include information that: (a) is
+            publicly available; (b) was known prior to disclosure; (c) is
+            independently developed; or (d) is received from a third party
+            without breach of confidentiality obligations.
+          </p>
+
+          <h2>13. Modifications to Terms</h2>
+          <p>
+            ClearEDI may modify these Terms from time to time. Material changes
+            will be communicated via email or through the Services at least 30
+            days before the effective date. Continued use of the Services after
+            the effective date constitutes acceptance of the modified Terms.
+          </p>
+
+          <h2>14. Governing Law and Dispute Resolution</h2>
+
+          <h3>14.1 Governing Law</h3>
+          <p>
+            These Terms are governed by the laws of the State of Washington,
+            United States, without regard to conflict of law principles.
+          </p>
+
+          <h3>14.2 Dispute Resolution</h3>
+          <p>
+            Any disputes arising out of or related to these Terms shall be
+            resolved through good faith negotiation. If negotiation fails,
+            disputes shall be submitted to binding arbitration in Seattle,
+            Washington, in accordance with the Commercial Arbitration Rules of
+            the American Arbitration Association.
+          </p>
+
+          <h3>14.3 Injunctive Relief</h3>
+          <p>
+            Notwithstanding the arbitration requirement, either party may seek
+            injunctive or equitable relief in any court of competent
+            jurisdiction to prevent actual or threatened infringement,
+            misappropriation, or violation of intellectual property rights or
+            confidentiality obligations.
+          </p>
+
+          <h2>15. General Provisions</h2>
+
+          <h3>15.1 Entire Agreement</h3>
+          <p>
+            These Terms, together with the Privacy Policy and Acceptable Use
+            Policy, constitute the entire agreement between you and ClearEDI
+            regarding the Services.
+          </p>
+
+          <h3>15.2 Assignment</h3>
+          <p>
+            You may not assign or transfer these Terms or your rights hereunder
+            without ClearEDI's prior written consent. ClearEDI may assign these
+            Terms in connection with a merger, acquisition, or sale of assets.
+          </p>
+
+          <h3>15.3 Severability</h3>
+          <p>
+            If any provision of these Terms is held invalid or unenforceable,
+            the remaining provisions will remain in full force and effect.
+          </p>
+
+          <h3>15.4 Waiver</h3>
+          <p>
+            Failure to enforce any provision of these Terms does not constitute
+            a waiver of that provision or any other provision.
+          </p>
+
+          <h3>15.5 Force Majeure</h3>
+          <p>
+            Neither party shall be liable for delays or failures in performance
+            resulting from causes beyond its reasonable control, including acts
+            of God, war, terrorism, natural disasters, or internet service
+            provider failures.
+          </p>
+
+          <h3>15.6 Notices</h3>
+          <p>
+            Notices must be sent to
+            <a href="mailto:contact@clearedi.io">contact@clearedi.io</a> (for
+            ClearEDI) or to the email address associated with your account (for
+            you).
+          </p>
+
+          <h2>16. Contact Information</h2>
+          <p>
+            For questions about these Terms or the Services, contact us:
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:contact@clearedi.io">contact@clearedi.io</a><br />
+            <strong>Mail:</strong> ClearEDI Inc., 115 Garfield St. #21897,
+            Sumas, WA 98295<br />
+            <strong>Support:</strong>
+            <a href="support.html">Contact Support</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 ClearEDI Inc. All rights reserved.</p>
+        <p style="margin-top: 8px">
+          <a href="privacy-policy.html" style="color: #0270d7; margin: 0 12px"
+            >Privacy Policy</a
+          >
+          |
+          <a href="terms-of-service.html" style="color: #0270d7; margin: 0 12px"
+            >Terms of Service</a
+          >
+          |
+          <a
+            href="acceptable-use.html"
+            style="color: #0270d7; margin: 0 12px"
+            >Acceptable Use</a
+          >
+          |
+          <a href="support.html" style="color: #0270d7; margin: 0 12px"
+            >Support</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

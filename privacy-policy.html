@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy - ClearEDI</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="dist/images/Logo_small.jpg" type="image/png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #ffffff;
+        color: #4a5568;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      /* Navigation Banner */
+      nav {
+        background: #112029;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 20px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-logo img {
+        height: 90px;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 48px;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-links li a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+        position: relative;
+      }
+
+      .nav-links li a:hover {
+        color: #ffffff;
+      }
+
+      .nav-links li a::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #0270d7;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+      }
+
+      .nav-links li a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #cbd5e1;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 16px 0;
+        }
+
+        .nav-logo img {
+          height: 60px;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 280px;
+          height: 100vh;
+          background: #112029;
+          flex-direction: column;
+          gap: 0;
+          padding: 80px 0 40px;
+          transition: right 0.3s ease;
+          box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .nav-links li {
+          width: 100%;
+        }
+
+        .nav-links li a {
+          display: block;
+          padding: 20px 40px;
+          font-size: 16px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links li a::after {
+          display: none;
+        }
+      }
+
+      /* Content Section */
+      .content-section {
+        padding: 80px 0 100px;
+      }
+
+      .content-header {
+        text-align: center;
+        margin-bottom: 60px;
+        padding-top: 20px;
+      }
+
+      .content-header h1 {
+        font-size: 48px;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 16px;
+        line-height: 1.2;
+      }
+
+      .content-header .date {
+        font-size: 16px;
+        color: #64748b;
+      }
+
+      .legal-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .legal-content h2 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-top: 48px;
+        margin-bottom: 20px;
+      }
+
+      .legal-content h3 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #334155;
+        margin-top: 32px;
+        margin-bottom: 16px;
+      }
+
+      .legal-content p {
+        font-size: 16px;
+        color: #475569;
+        line-height: 1.8;
+        margin-bottom: 16px;
+      }
+
+      .legal-content ul,
+      .legal-content ol {
+        margin-left: 24px;
+        margin-bottom: 16px;
+      }
+
+      .legal-content li {
+        font-size: 16px;
+        color: #475569;
+        line-height: 1.8;
+        margin-bottom: 8px;
+      }
+
+      .legal-content strong {
+        font-weight: 600;
+        color: #1e293b;
+      }
+
+      .legal-content a {
+        color: #0270d7;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease;
+      }
+
+      .legal-content a:hover {
+        border-bottom-color: #0270d7;
+      }
+
+      .amazon-section {
+        background: #f8fafc;
+        border-left: 4px solid #0270d7;
+        padding: 24px;
+        margin: 32px 0;
+        border-radius: 8px;
+      }
+
+      .amazon-section h3 {
+        margin-top: 0;
+        color: #0270d7;
+      }
+
+      /* Footer */
+      footer {
+        background: #f8fafc;
+        padding: 48px 0;
+        text-align: center;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      footer p {
+        font-size: 15px;
+        color: #64748b;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 24px;
+        }
+
+        .content-section {
+          padding: 60px 0 80px;
+        }
+
+        .content-header h1 {
+          font-size: 36px;
+        }
+
+        .legal-content h2 {
+          font-size: 24px;
+        }
+
+        .legal-content h3 {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Banner -->
+    <nav>
+      <div class="container">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="index.html"
+              ><img src="dist/images/LogoSmall.png" alt="ClearEDI Logo"
+            /></a>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#edi-features">EDI</a></li>
+            <li><a href="index.html#ecommerce">eCommerce</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content Section -->
+    <section class="content-section">
+      <div class="container">
+        <div class="content-header">
+          <h1>Privacy Policy</h1>
+          <p class="date">Effective Date: November 1, 2025</p>
+        </div>
+
+        <div class="legal-content">
+          <h2>1. Introduction</h2>
+          <p>
+            ClearEDI Inc. ("ClearEDI", "we", "us", or "our") is committed to
+            protecting your privacy. This Privacy Policy explains how we
+            collect, use, disclose, and safeguard your information when you use
+            our enterprise EDI integration platform and related services (the
+            "Services").
+          </p>
+          <p>
+            <strong>Data Controller:</strong><br />
+            ClearEDI Inc.<br />
+            115 Garfield St. #21897<br />
+            Sumas, WA 98295<br />
+            Email:
+            <a href="mailto:privacy@clearedi.io">privacy@clearedi.io</a>
+          </p>
+
+          <h2>2. Information We Collect</h2>
+
+          <h3>2.1 Information You Provide</h3>
+          <ul>
+            <li>
+              <strong>Account Information:</strong> Name, email address, company
+              name, phone number, business address
+            </li>
+            <li>
+              <strong>Authentication Credentials:</strong> Login credentials,
+              API keys, OAuth tokens for third-party integrations
+            </li>
+            <li>
+              <strong>EDI Transaction Data:</strong> Business documents (purchase
+              orders, invoices, shipping notices), trading partner information,
+              EDI account details
+            </li>
+            <li>
+              <strong>Communication Data:</strong> Support requests,
+              correspondence, feedback
+            </li>
+          </ul>
+
+          <h3>2.2 Information Collected Automatically</h3>
+          <ul>
+            <li>
+              <strong>Usage Data:</strong> IP address, browser type, device
+              information, access times, pages viewed
+            </li>
+            <li>
+              <strong>Log Data:</strong> API requests, transaction processing
+              logs, system events, error logs
+            </li>
+            <li>
+              <strong>Cookies:</strong> Session management, authentication,
+              analytics (see Section 9)
+            </li>
+          </ul>
+
+          <div class="amazon-section">
+            <h3>2.3 Amazon Seller Central Integration Data</h3>
+            <p>
+              When you connect your Amazon Seller Central account through our
+              Services, we collect and process:
+            </p>
+            <ul>
+              <li>
+                <strong>Seller Information:</strong> Seller ID, marketplace IDs,
+                account credentials (refresh tokens)
+              </li>
+              <li>
+                <strong>Order Data:</strong> Order details, customer shipping
+                information (name, address), fulfillment status
+              </li>
+              <li>
+                <strong>Product Information:</strong> Inventory levels, product
+                listings, pricing information
+              </li>
+              <li>
+                <strong>Personally Identifiable Information (PII):</strong>
+                Customer names, shipping addresses, and other data necessary for
+                order fulfillment and tax compliance
+              </li>
+            </ul>
+            <p>
+              <strong>Important:</strong> We process Amazon Seller Central data
+              in accordance with Amazon's Data Protection Policy and retain PII
+              for no longer than 30 days after order delivery, except as
+              required by law for tax compliance or other legal obligations.
+            </p>
+          </div>
+
+          <h2>3. How We Use Your Information</h2>
+
+          <h3>3.1 Service Delivery</h3>
+          <ul>
+            <li>Provide, operate, and maintain our EDI integration platform</li>
+            <li>
+              Process EDI transactions (X12, EDIFACT) between you and your
+              trading partners
+            </li>
+            <li>
+              Facilitate connectivity via SFTP, AS2, and REST API protocols
+            </li>
+            <li>Synchronize data with eCommerce platforms (Amazon, Shopify)</li>
+            <li>Generate functional acknowledgements and transaction reports</li>
+          </ul>
+
+          <h3>3.2 Business Operations</h3>
+          <ul>
+            <li>Authenticate users and manage access controls</li>
+            <li>Process billing and payments</li>
+            <li>Provide customer support and respond to inquiries</li>
+            <li>Detect, prevent, and address fraud or security issues</li>
+            <li>Comply with legal obligations and enforce our terms</li>
+          </ul>
+
+          <h3>3.3 Service Improvement</h3>
+          <ul>
+            <li>
+              Analyze usage patterns to improve platform functionality and
+              performance
+            </li>
+            <li>Develop new features and services</li>
+            <li>
+              Conduct internal research and analytics (using aggregated,
+              de-identified data)
+            </li>
+          </ul>
+
+          <div class="amazon-section">
+            <h3>3.4 Amazon-Specific Data Usage</h3>
+            <p>
+              PII from Amazon Seller Central is used exclusively for:
+            </p>
+            <ul>
+              <li>Order fulfillment and shipping coordination</li>
+              <li>Tax calculation and invoice generation</li>
+              <li>Compliance with legal and regulatory requirements</li>
+            </ul>
+            <p>
+              We do <strong>not</strong> use Amazon PII for marketing, analytics
+              model training, or any purpose beyond what is necessary for order
+              fulfillment and legal compliance.
+            </p>
+          </div>
+
+          <h2>4. Legal Bases for Processing (GDPR)</h2>
+          <p>
+            For users in the European Economic Area (EEA), we process your
+            personal data under the following legal bases:
+          </p>
+          <ul>
+            <li>
+              <strong>Contractual Necessity:</strong> Processing necessary to
+              perform our contract with you (service delivery, transaction
+              processing)
+            </li>
+            <li>
+              <strong>Legitimate Interests:</strong> Fraud prevention, security,
+              service improvement, business analytics
+            </li>
+            <li>
+              <strong>Legal Obligation:</strong> Compliance with tax laws, data
+              protection regulations, court orders
+            </li>
+            <li>
+              <strong>Consent:</strong> Marketing communications, optional
+              features (where consent is obtained)
+            </li>
+          </ul>
+
+          <h2>5. Data Sharing and Disclosure</h2>
+
+          <h3>5.1 Service Providers</h3>
+          <p>We share data with third-party service providers who assist us:</p>
+          <ul>
+            <li>
+              <strong>Cloud Infrastructure:</strong> Amazon Web Services (AWS)
+              for hosting and storage (us-east-1 region)
+            </li>
+            <li>
+              <strong>EDI Processing:</strong> EdiFabric for X12/EDIFACT
+              parsing, validation, and generation
+            </li>
+            <li>
+              <strong>Authentication:</strong> Auth0 for identity and access
+              management
+            </li>
+            <li>
+              <strong>Payment Processing:</strong> Third-party payment
+              processors for billing
+            </li>
+            <li>
+              <strong>Monitoring:</strong> New Relic for application performance
+              monitoring
+            </li>
+          </ul>
+          <p>
+            All service providers are contractually obligated to protect your
+            data and use it only for the purposes we specify.
+          </p>
+
+          <h3>5.2 Trading Partners</h3>
+          <p>
+            With your authorization, we transmit EDI business documents to your
+            designated trading partners as necessary for B2B transaction
+            processing.
+          </p>
+
+          <h3>5.3 Legal Requirements</h3>
+          <p>We may disclose information when required to:</p>
+          <ul>
+            <li>Comply with legal obligations, court orders, or subpoenas</li>
+            <li>Enforce our Terms of Service or other agreements</li>
+            <li>
+              Protect the rights, property, or safety of ClearEDI, our users, or
+              the public
+            </li>
+            <li>Investigate fraud, security incidents, or policy violations</li>
+          </ul>
+
+          <div class="amazon-section">
+            <h3>5.4 Amazon Data Sharing Restrictions</h3>
+            <p>
+              Data obtained from Amazon Seller Central APIs is subject to
+              Amazon's Data Protection Policy and will not be:
+            </p>
+            <ul>
+              <li>Sold, rented, or disclosed to third parties for marketing</li>
+              <li>
+                Used to develop or train large language models or AI systems
+              </li>
+              <li>
+                Subjected to data mining, scraping, or unauthorized extraction
+              </li>
+              <li>
+                Retained beyond the permitted retention period (30 days for PII)
+              </li>
+            </ul>
+          </div>
+
+          <h2>6. Data Security</h2>
+          <p>
+            We implement industry-standard security measures to protect your
+            data, aligned with Amazon's Data Protection Policy requirements:
+          </p>
+
+          <h3>6.1 Encryption</h3>
+          <ul>
+            <li>
+              <strong>Data in Transit:</strong> TLS 1.2+ for all API
+              communications, SFTP and SSH-2 for file transfers
+            </li>
+            <li>
+              <strong>Data at Rest:</strong> AES-256 encryption for all stored
+              data, including credentials and PII
+            </li>
+            <li>
+              <strong>Key Management:</strong> Secure key generation, storage,
+              rotation, and revocation procedures
+            </li>
+          </ul>
+
+          <h3>6.2 Access Controls</h3>
+          <ul>
+            <li>Multi-factor authentication (MFA) for all user accounts</li>
+            <li>Role-based access control (RBAC) with least privilege principle</li>
+            <li>Unique user IDs; no shared credentials</li>
+            <li>Quarterly access reviews and 24-hour termination protocols</li>
+          </ul>
+
+          <h3>6.3 Network Security</h3>
+          <ul>
+            <li>Firewalls and network segmentation</li>
+            <li>Intrusion detection and prevention systems</li>
+            <li>Regular vulnerability scanning (monthly minimum)</li>
+            <li>Annual penetration testing</li>
+          </ul>
+
+          <h3>6.4 Incident Response</h3>
+          <ul>
+            <li>24-hour breach notification procedures</li>
+            <li>
+              Immediate reporting to affected parties and regulatory authorities
+            </li>
+            <li>Annual incident response plan reviews and updates</li>
+          </ul>
+          <p>
+            If you suspect a security incident, please report immediately to
+            <a href="mailto:security@clearedi.io">security@clearedi.io</a>.
+          </p>
+
+          <h2>7. Data Retention</h2>
+
+          <h3>7.1 General Data</h3>
+          <p>We retain your data for as long as:</p>
+          <ul>
+            <li>Your account is active and you continue using our Services</li>
+            <li>
+              Necessary to provide Services, resolve disputes, or enforce
+              agreements
+            </li>
+            <li>Required by law for tax, accounting, or regulatory purposes</li>
+          </ul>
+          <p>
+            Upon account termination, we will securely delete your data within
+            30 days, unless retention is legally required.
+          </p>
+
+          <div class="amazon-section">
+            <h3>7.2 Amazon PII Retention</h3>
+            <p>
+              <strong
+                >Personally Identifiable Information from Amazon Seller
+                Central:</strong
+              >
+            </p>
+            <ul>
+              <li>
+                Retained for <strong>no longer than 30 days</strong> after order
+                delivery
+              </li>
+              <li>
+                Exception: Data required by law for tax compliance may be
+                retained as legally mandated
+              </li>
+              <li>
+                Non-PII data is deleted within 18 months unless legally required
+              </li>
+            </ul>
+          </div>
+
+          <h3>7.3 Secure Deletion</h3>
+          <p>
+            All data deletion follows NIST 800-88 standards or equivalent
+            industry-standard sanitization processes.
+          </p>
+
+          <h2>8. Your Rights and Choices</h2>
+
+          <h3>8.1 Access and Portability (GDPR Article 15, 20)</h3>
+          <p>
+            You have the right to request a copy of the personal data we hold
+            about you in a structured, commonly used format.
+          </p>
+
+          <h3>8.2 Rectification (GDPR Article 16)</h3>
+          <p>
+            You may request correction of inaccurate or incomplete personal
+            data.
+          </p>
+
+          <h3>8.3 Erasure (GDPR Article 17, CCPA)</h3>
+          <p>
+            You may request deletion of your personal data, subject to legal
+            retention requirements.
+          </p>
+
+          <h3>8.4 Restriction and Objection (GDPR Articles 18, 21)</h3>
+          <p>
+            You may request restriction of processing or object to processing
+            based on legitimate interests.
+          </p>
+
+          <h3>8.5 Opt-Out (CCPA/CPRA)</h3>
+          <p>California residents may:</p>
+          <ul>
+            <li>
+              Request disclosure of categories and specific pieces of personal
+              information collected
+            </li>
+            <li>Request deletion of personal information</li>
+            <li>Opt-out of data sales (we do not sell personal data)</li>
+            <li>Exercise rights without discrimination</li>
+          </ul>
+
+          <h3>8.6 Withdraw Consent</h3>
+          <p>
+            Where processing is based on consent, you may withdraw consent at
+            any time.
+          </p>
+
+          <h3>8.7 How to Exercise Your Rights</h3>
+          <p>
+            Contact us at
+            <a href="mailto:privacy@clearedi.io">privacy@clearedi.io</a>. We
+            will respond within 30 days (GDPR) or 45 days (CCPA).
+          </p>
+
+          <h2>9. Cookies and Tracking Technologies</h2>
+          <p>We use cookies and similar technologies for:</p>
+          <ul>
+            <li>
+              <strong>Essential Cookies:</strong> Authentication, session
+              management, security
+            </li>
+            <li>
+              <strong>Analytics Cookies:</strong> Usage statistics, performance
+              monitoring
+            </li>
+          </ul>
+          <p>
+            You can control cookies through your browser settings. Disabling
+            essential cookies may affect platform functionality.
+          </p>
+
+          <h2>10. International Data Transfers</h2>
+          <p>
+            Your data may be transferred to and processed in the United States
+            (AWS us-east-1 region). For EEA users, we rely on:
+          </p>
+          <ul>
+            <li>Standard Contractual Clauses (SCCs) approved by the EU</li>
+            <li>Adequate safeguards as required by GDPR Article 46</li>
+          </ul>
+
+          <h2>11. Children's Privacy</h2>
+          <p>
+            Our Services are not directed to individuals under 18. We do not
+            knowingly collect personal information from children.
+          </p>
+
+          <h2>12. Third-Party Links</h2>
+          <p>
+            Our Services may contain links to third-party websites. We are not
+            responsible for their privacy practices. Review their privacy
+            policies before providing information.
+          </p>
+
+          <h2>13. Changes to This Privacy Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. Changes will be
+            posted on this page with an updated effective date. Material changes
+            will be communicated via email or prominent notice.
+          </p>
+
+          <h2>14. Contact Us</h2>
+          <p>
+            For questions or concerns about this Privacy Policy or our data
+            practices:
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:privacy@clearedi.io">privacy@clearedi.io</a><br />
+            <strong>Mail:</strong> ClearEDI Inc., 115 Garfield St. #21897,
+            Sumas, WA 98295<br />
+            <strong>Support:</strong>
+            <a href="support.html">Contact Support</a>
+          </p>
+
+          <h2>15. Supervisory Authority</h2>
+          <p>
+            If you are in the EEA, you have the right to lodge a complaint with
+            your local data protection authority if you believe we have not
+            complied with applicable data protection laws.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 ClearEDI Inc. All rights reserved.</p>
+        <p style="margin-top: 8px">
+          <a href="privacy-policy.html" style="color: #0270d7; margin: 0 12px"
+            >Privacy Policy</a
+          >
+          |
+          <a href="terms-of-service.html" style="color: #0270d7; margin: 0 12px"
+            >Terms of Service</a
+          >
+          |
+          <a
+            href="acceptable-use.html"
+            style="color: #0270d7; margin: 0 12px"
+            >Acceptable Use</a
+          >
+          |
+          <a href="support.html" style="color: #0270d7; margin: 0 12px"
+            >Support</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Navigation Script -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
