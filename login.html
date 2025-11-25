@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign In - ClearEDI</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="dist/images/Logo_small.jpg" type="image/png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: linear-gradient(180deg, #1e293b 0%, #334155 100%);
+        color: #4a5568;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      /* Navigation Banner */
+      nav {
+        background: #112029;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-logo img {
+        height: 90px;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 48px;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-links li a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+        position: relative;
+      }
+
+      .nav-links li a:hover {
+        color: #ffffff;
+      }
+
+      .nav-links li a::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #0270d7;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+      }
+
+      .nav-links li a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #cbd5e1;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 16px 0;
+        }
+
+        .nav-logo img {
+          height: 60px;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 280px;
+          height: 100vh;
+          background: #112029;
+          flex-direction: column;
+          gap: 0;
+          padding: 80px 0 40px;
+          transition: right 0.3s ease;
+          box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .nav-links li {
+          width: 100%;
+        }
+
+        .nav-links li a {
+          display: block;
+          padding: 20px 40px;
+          font-size: 16px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links li a::after {
+          display: none;
+        }
+      }
+
+      /* Main Content */
+      .login-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+      }
+
+      .login-box {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 60px 50px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .login-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .login-logo {
+        margin-bottom: 24px;
+      }
+
+      .login-logo img {
+        height: 60px;
+      }
+
+      .login-header h1 {
+        font-size: 32px;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 12px;
+      }
+
+      .login-header p {
+        font-size: 16px;
+        color: #64748b;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #334155;
+        margin-bottom: 8px;
+      }
+
+      .domain-input-wrapper {
+        position: relative;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 16px;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        font-family: inherit;
+        transition: all 0.2s ease;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: #0270d7;
+        box-shadow: 0 0 0 3px rgba(2, 112, 215, 0.1);
+      }
+
+      .form-group input.error {
+        border-color: #dc2626;
+      }
+
+      .form-group input.error:focus {
+        box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+      }
+
+      .domain-helper {
+        font-size: 14px;
+        color: #64748b;
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .domain-helper .preview {
+        font-weight: 600;
+        color: #0270d7;
+      }
+
+      .error-message {
+        color: #dc2626;
+        font-size: 14px;
+        margin-top: 8px;
+        display: none;
+      }
+
+      .error-message.show {
+        display: block;
+      }
+
+      .submit-btn {
+        width: 100%;
+        background: #0270d7;
+        color: #ffffff;
+        padding: 16px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background: #025aa5;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(2, 112, 215, 0.3);
+      }
+
+      .submit-btn:active {
+        transform: translateY(0);
+      }
+
+      .submit-btn:disabled {
+        background: #94a3b8;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .help-section {
+        margin-top: 32px;
+        text-align: center;
+        padding-top: 32px;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .help-section p {
+        font-size: 14px;
+        color: #64748b;
+        margin-bottom: 12px;
+      }
+
+      .help-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .help-link {
+        color: #0270d7;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease;
+      }
+
+      .help-link:hover {
+        border-bottom-color: #0270d7;
+      }
+
+      /* Footer */
+      footer {
+        background: rgba(17, 32, 41, 0.8);
+        padding: 32px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      footer p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      footer a {
+        color: #0270d7;
+        text-decoration: none;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 24px;
+        }
+
+        .login-box {
+          padding: 40px 30px;
+        }
+
+        .login-header h1 {
+          font-size: 28px;
+        }
+
+        .help-links {
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Banner -->
+    <nav>
+      <div class="container">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="index.html"
+              ><img src="dist/images/LogoSmall.png" alt="ClearEDI Logo"
+            /></a>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#edi-features">EDI</a></li>
+            <li><a href="index.html#ecommerce">eCommerce</a></li>
+            <li><a href="support.html">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Login Container -->
+    <div class="login-container">
+      <div class="login-box">
+        <div class="login-header">
+          <div class="login-logo">
+            <img src="dist/images/Logo_small.jpg" alt="ClearEDI" />
+          </div>
+          <h1>Sign In to ClearEDI</h1>
+          <p>Enter your company domain to access your account</p>
+        </div>
+
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="domain">Company Domain</label>
+            <div class="domain-input-wrapper">
+              <input
+                type="text"
+                id="domain"
+                name="domain"
+                placeholder="yourcompany"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+              />
+            </div>
+            <div class="domain-helper">
+              <span class="preview" id="domainPreview">yourcompany</span
+              >.clearedi.io
+            </div>
+            <div class="error-message" id="errorMessage">
+              Invalid domain format. Use only letters, numbers, and hyphens.
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            Continue
+          </button>
+        </form>
+
+        <div class="help-section">
+          <p>Need help accessing your account?</p>
+          <div class="help-links">
+            <a href="support.html" class="help-link">Contact Support</a>
+            <a href="mailto:contact@clearedi.io" class="help-link"
+              >Email Us</a
+            >
+            <a href="support.html" class="help-link">New Customer?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p style="margin-bottom: 8px">
+          <a href="privacy-policy.html">Privacy Policy</a> |
+          <a href="terms-of-service.html">Terms of Service</a> |
+          <a href="support.html">Support</a>
+        </p>
+        <p>&copy; 2025 ClearEDI Inc. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Hamburger menu toggle
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove("active");
+        }
+      });
+
+      // Login form handling
+      const form = document.getElementById("loginForm");
+      const domainInput = document.getElementById("domain");
+      const domainPreview = document.getElementById("domainPreview");
+      const errorMessage = document.getElementById("errorMessage");
+      const submitBtn = document.getElementById("submitBtn");
+
+      // Domain validation regex: alphanumeric and hyphens, 2-63 characters
+      const domainRegex = /^[a-z0-9-]{2,63}$/;
+
+      // Update preview as user types
+      domainInput.addEventListener("input", (e) => {
+        const value = e.target.value.trim().toLowerCase();
+        domainPreview.textContent = value || "yourcompany";
+
+        // Clear error state when typing
+        if (errorMessage.classList.contains("show")) {
+          errorMessage.classList.remove("show");
+          domainInput.classList.remove("error");
+        }
+      });
+
+      // Handle form submission
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const domain = domainInput.value.trim().toLowerCase();
+
+        // Validate domain format
+        if (!domain) {
+          showError("Please enter your company domain");
+          return;
+        }
+
+        if (!domainRegex.test(domain)) {
+          showError(
+            "Invalid domain format. Use only letters, numbers, and hyphens."
+          );
+          return;
+        }
+
+        // Valid domain - redirect
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Redirecting...";
+
+        // Preserve all URL params from current page
+        const currentParams = window.location.search;
+
+        // Redirect to tenant subdomain with params
+        window.location.href = `https://${domain}.clearedi.io${currentParams}`;
+      });
+
+      // Show error message
+      function showError(message) {
+        errorMessage.textContent = message;
+        errorMessage.classList.add("show");
+        domainInput.classList.add("error");
+        domainInput.focus();
+      }
+
+      // Focus input on load
+      window.addEventListener("load", () => {
+        domainInput.focus();
+      });
+    </script>
+  </body>
+</html>

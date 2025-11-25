@@ -290,7 +290,8 @@
           </div>
 
           <div class="button-group">
-            <a href="../../index.html" class="button-primary">Return Home</a>
+            <a href="#" class="button-primary" id="authorizeBtn">Authorize</a>
+            <a href="../../index.html" class="button-secondary">Return Home</a>
             <a href="../../index.html#ecommerce" class="button-secondary"
               >View Integrations</a
             >
@@ -344,6 +345,20 @@
         statusText.textContent =
           "Ready to authorize Amazon Selling Partner integration";
         loadingIndicator.style.display = "none";
+      }
+
+      // Handle Authorize button click
+      const authorizeBtn = document.getElementById("authorizeBtn");
+      if (authorizeBtn) {
+        authorizeBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Preserve all URL params from current page
+          const currentParams = window.location.search;
+
+          // Redirect to login with params
+          window.location.href = `../../login.html${currentParams}`;
+        });
       }
 
       // Smooth scroll for anchor links
