@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /ecommerce-connector/
+
+Sitemap: https://clearedi.io/sitemap.xml
