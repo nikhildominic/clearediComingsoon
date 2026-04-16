@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pricing - ClearEDI</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="ClearEDI pricing plans for EDI integration. From Basic to Enterprise, find the right plan for your business. Transparent pricing with no hidden fees.">
+    <link rel="canonical" href="https://clearedi.io/pricing">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clearedi.io/pricing">
+    <meta property="og:title" content="Pricing - ClearEDI">
+    <meta property="og:description" content="ClearEDI pricing plans for EDI integration. From Basic to Enterprise, find the right plan for your business. Transparent pricing with no hidden fees.">
+    <meta property="og:image" content="https://clearedi.io/dist/images/LogoLarge_rectangle.jpg">
+    <meta property="og:site_name" content="ClearEDI">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://clearedi.io/pricing">
+    <meta name="twitter:title" content="Pricing - ClearEDI">
+    <meta name="twitter:description" content="ClearEDI pricing plans for EDI integration. From Basic to Enterprise, find the right plan for your business. Transparent pricing with no hidden fees.">
+    <meta name="twitter:image" content="https://clearedi.io/dist/images/LogoLarge_rectangle.jpg">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="dist/images/Logo_small.jpg" type="image/png" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Pricing - ClearEDI",
+  "url": "https://clearedi.io/pricing"
+}
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #ffffff;
+        color: #4a5568;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      /* Navigation Banner */
+      nav {
+        background: #112029;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 20px 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-logo img {
+        height: 90px;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 48px;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-links li a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+        position: relative;
+      }
+
+      .nav-links li a:hover {
+        color: #ffffff;
+      }
+
+      .nav-links li a::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #0270d7;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+      }
+
+      .nav-links li a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #cbd5e1;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          padding: 16px 0;
+        }
+
+        .nav-logo img {
+          height: 60px;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 280px;
+          height: 100vh;
+          background: #112029;
+          flex-direction: column;
+          gap: 0;
+          padding: 80px 0 40px;
+          transition: right 0.3s ease;
+          box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .nav-links li {
+          width: 100%;
+        }
+
+        .nav-links li a {
+          display: block;
+          padding: 20px 40px;
+          font-size: 16px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links li a::after {
+          display: none;
+        }
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 80px 0 100px;
+        background: linear-gradient(180deg, #1e293b 0%, #334155 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 24px;
+        color: #ffffff;
+      }
+
+      .hero p {
+        font-size: 20px;
+        color: #cbd5e1;
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Animated Background Shapes */
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.08;
+        animation: float 7s ease-in-out infinite;
+      }
+
+      .shape-1 {
+        width: 400px;
+        height: 400px;
+        background: linear-gradient(135deg, #0270d7 0%, #0a4d94 100%);
+        top: -200px;
+        right: -100px;
+        animation-delay: 0s;
+      }
+
+      .shape-2 {
+        width: 300px;
+        height: 300px;
+        background: linear-gradient(135deg, #0270d7 0%, #0a4d94 100%);
+        bottom: -150px;
+        left: -150px;
+        animation-delay: 2s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(20px, 20px) scale(1.1);
+        }
+      }
+
+      /* Section */
+      section {
+        padding: 100px 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-header h2 {
+        font-size: 48px;
+        font-weight: 800;
+        color: #1e293b;
+        margin-bottom: 16px;
+        line-height: 1.2;
+      }
+
+      .section-header p {
+        font-size: 18px;
+        color: #64748b;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Pricing Cards */
+      .pricing-section {
+        background: #f8fafc;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .pricing-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 32px 24px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(37, 99, 235, 0.1);
+      }
+
+      .pricing-card.recommended {
+        border: 2px solid #0270d7;
+        box-shadow: 0 8px 32px rgba(2, 112, 215, 0.2);
+        position: relative;
+      }
+
+      .pricing-card.recommended::before {
+        content: "Recommended";
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0270d7;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 4px 16px;
+        border-radius: 12px;
+      }
+
+      .pricing-tier {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 8px;
+      }
+
+      .pricing-price {
+        margin-bottom: 20px;
+      }
+
+      .pricing-price .amount {
+        font-size: 36px;
+        font-weight: 800;
+        color: #1e293b;
+      }
+
+      .pricing-price .period {
+        font-size: 14px;
+        color: #64748b;
+      }
+
+      .pricing-price .custom {
+        font-size: 24px;
+        font-weight: 700;
+        color: #1e293b;
+      }
+
+      .pricing-transactions {
+        font-size: 14px;
+        color: #0270d7;
+        font-weight: 600;
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .pricing-features {
+        list-style: none;
+        margin-bottom: 24px;
+        flex-grow: 1;
+      }
+
+      .pricing-features li {
+        font-size: 14px;
+        color: #475569;
+        margin-bottom: 12px;
+        padding-left: 24px;
+        position: relative;
+      }
+
+      .pricing-features li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #0270d7;
+        font-weight: 600;
+      }
+
+      .pricing-btn {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .pricing-btn-primary {
+        background: #0270d7;
+        color: #ffffff;
+      }
+
+      .pricing-btn-primary:hover {
+        background: #025aa5;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(2, 112, 215, 0.3);
+      }
+
+      .pricing-btn-secondary {
+        background: #f1f5f9;
+        color: #1e293b;
+      }
+
+      .pricing-btn-secondary:hover {
+        background: #e2e8f0;
+      }
+
+      /* Feature Comparison Table */
+      .comparison-section {
+        padding: 100px 0;
+      }
+
+      .comparison-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 900px;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: 16px 20px;
+        text-align: center;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .comparison-table th {
+        background: #f8fafc;
+        font-size: 14px;
+        font-weight: 700;
+        color: #1e293b;
+      }
+
+      .comparison-table th:first-child {
+        text-align: left;
+        width: 260px;
+        position: sticky;
+        left: 0;
+        background: #f8fafc;
+        z-index: 10;
+      }
+
+      .comparison-table td:first-child {
+        text-align: left;
+        font-weight: 500;
+        color: #334155;
+        position: sticky;
+        left: 0;
+        background: #ffffff;
+        z-index: 10;
+      }
+
+      .comparison-table tbody tr:hover {
+        background: #f8fafc;
+      }
+
+      .comparison-table tbody tr:hover td:first-child {
+        background: #f8fafc;
+      }
+
+      .comparison-table td {
+        font-size: 14px;
+        color: #475569;
+      }
+
+      .comparison-table .check {
+        color: #0270d7;
+        font-size: 18px;
+      }
+
+      .comparison-table .x-mark {
+        color: #cbd5e1;
+        font-size: 18px;
+      }
+
+      .comparison-table .highlight-col {
+        background: rgba(2, 112, 215, 0.05);
+      }
+
+      .comparison-table th.highlight-col {
+        background: rgba(2, 112, 215, 0.1);
+        color: #0270d7;
+      }
+
+      .category-row td {
+        background: #f1f5f9 !important;
+        font-weight: 700;
+        color: #1e293b !important;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: #112029;
+        text-align: center;
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        top: -250px;
+        right: -250px;
+      }
+
+      .cta-section::after {
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.03);
+        bottom: -200px;
+        left: -200px;
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-section h2 {
+        font-size: 48px;
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .cta-section p {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 40px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 36px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .button-primary {
+        background: #0270d7;
+        color: #ffffff;
+      }
+
+      .button-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      .button-secondary {
+        background: transparent;
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .button-secondary:hover {
+        border-color: #ffffff;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Footer */
+      footer {
+        background: #f8fafc;
+        padding: 48px 0;
+        text-align: center;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      footer p {
+        font-size: 15px;
+        color: #64748b;
+      }
+
+      /* Responsive */
+      @media (max-width: 1200px) {
+        .pricing-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .hero h1 {
+          font-size: 44px;
+        }
+
+        .section-header h2 {
+          font-size: 40px;
+        }
+
+        .pricing-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 24px;
+        }
+
+        .hero {
+          padding: 60px 0 80px;
+        }
+
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .section-header h2 {
+          font-size: 32px;
+        }
+
+        section {
+          padding: 80px 0;
+        }
+
+        .pricing-grid {
+          grid-template-columns: 1fr;
+          max-width: 400px;
+        }
+
+        .pricing-card.recommended {
+          order: -1;
+        }
+
+        .button-group {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .cta-section h2 {
+          font-size: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Banner -->
+    <header>
+      <nav>
+      <div class="container">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="/"
+              ><img src="dist/images/LogoSmall.png" alt="ClearEDI Logo"
+            /></a>
+          </div>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#edi-features">EDI</a></li>
+            <li><a href="/#ecommerce">eCommerce</a></li>
+            <li><a href="pricing">Pricing</a></li>
+            <li><a href="login">Sign In</a></li>
+            <li><a href="support">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+    <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Simple, Transparent Pricing</h1>
+          <p>
+            Choose the plan that fits your business. No hidden fees, no surprises. Scale as you grow.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Cards Section -->
+    <section class="pricing-section">
+      <div class="container">
+        <div class="pricing-grid">
+          <!-- Basic -->
+          <div class="pricing-card">
+            <div class="pricing-tier">Basic</div>
+            <div class="pricing-price">
+              <span class="amount">$499</span>
+              <span class="period">/month</span>
+            </div>
+            <div class="pricing-transactions">1,000 transactions included</div>
+            <ul class="pricing-features">
+              <li>1 eCommerce connector</li>
+              <li>1 trading partner</li>
+              <li>SFTP + API connectivity</li>
+              <li>24/7 monitoring &amp; alerting</li>
+              <li>Email support</li>
+              <li>$0.50 per overage transaction</li>
+            </ul>
+            <a href="support" class="pricing-btn pricing-btn-secondary">Get Started</a>
+          </div>
+
+          <!-- Starter -->
+          <div class="pricing-card">
+            <div class="pricing-tier">Starter</div>
+            <div class="pricing-price">
+              <span class="amount">$1,499</span>
+              <span class="period">/month</span>
+            </div>
+            <div class="pricing-transactions">3,500 transactions included</div>
+            <ul class="pricing-features">
+              <li>2 eCommerce connectors</li>
+              <li>2 trading partners</li>
+              <li>SFTP + Managed SFTP + AS2 + API</li>
+              <li>24/7 monitoring &amp; alerting</li>
+              <li>Email + Priority support</li>
+              <li>$0.35 per overage transaction</li>
+            </ul>
+            <a href="support" class="pricing-btn pricing-btn-secondary">Get Started</a>
+          </div>
+
+          <!-- Growth (Recommended) -->
+          <div class="pricing-card recommended">
+            <div class="pricing-tier">Growth</div>
+            <div class="pricing-price">
+              <span class="amount">$2,399</span>
+              <span class="period">/month</span>
+            </div>
+            <div class="pricing-transactions">7,500 transactions included</div>
+            <ul class="pricing-features">
+              <li>5 eCommerce connectors</li>
+              <li>5 trading partners</li>
+              <li>SFTP + Managed SFTP + AS2 + API</li>
+              <li>24/7 monitoring &amp; alerting</li>
+              <li>Email + Priority + Dedicated CSM</li>
+              <li>$0.25 per overage transaction</li>
+            </ul>
+            <a href="support" class="pricing-btn pricing-btn-primary">Get Started</a>
+          </div>
+
+          <!-- Pro -->
+          <div class="pricing-card">
+            <div class="pricing-tier">Pro</div>
+            <div class="pricing-price">
+              <span class="amount">$3,899</span>
+              <span class="period">/month</span>
+            </div>
+            <div class="pricing-transactions">15,000 transactions included</div>
+            <ul class="pricing-features">
+              <li>10 eCommerce connectors</li>
+              <li>10 trading partners</li>
+              <li>SFTP + Managed SFTP + AS2 + API</li>
+              <li>24/7 monitoring &amp; alerting</li>
+              <li>Email + Priority + Dedicated CSM</li>
+              <li>$0.15 per overage transaction</li>
+            </ul>
+            <a href="support" class="pricing-btn pricing-btn-secondary">Get Started</a>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="pricing-card">
+            <div class="pricing-tier">Enterprise</div>
+            <div class="pricing-price">
+              <span class="custom">Custom Pricing</span>
+            </div>
+            <div class="pricing-transactions">Custom transactions</div>
+            <ul class="pricing-features">
+              <li>Custom eCommerce connectors</li>
+              <li>Custom trading partners</li>
+              <li>All connectivity options</li>
+              <li>24/7 monitoring &amp; alerting</li>
+              <li>Email + Priority + Dedicated CSM</li>
+              <li>Custom overage pricing</li>
+            </ul>
+            <a href="support" class="pricing-btn pricing-btn-secondary">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Comparison Section -->
+    <section class="comparison-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Compare Plans</h2>
+          <p>See what's included in each pricing tier</p>
+        </div>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Basic</th>
+                <th>Starter</th>
+                <th class="highlight-col">Growth</th>
+                <th>Pro</th>
+                <th>Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Pricing & Transactions -->
+              <tr class="category-row">
+                <td colspan="6">Pricing & Transactions</td>
+              </tr>
+              <tr>
+                <td>Monthly Platform Fee</td>
+                <td>$499</td>
+                <td>$1,499</td>
+                <td class="highlight-col">$2,399</td>
+                <td>$3,899</td>
+                <td>Custom</td>
+              </tr>
+              <tr>
+                <td>Included Transactions per Month</td>
+                <td>1,000</td>
+                <td>3,500</td>
+                <td class="highlight-col">7,500</td>
+                <td>15,000</td>
+                <td>Custom</td>
+              </tr>
+              <tr>
+                <td>Overage Fee (per transaction)</td>
+                <td>$0.50</td>
+                <td>$0.35</td>
+                <td class="highlight-col">$0.25</td>
+                <td>$0.15</td>
+                <td>Custom</td>
+              </tr>
+              <tr>
+                <td>EDI Trading Partner Onboarding Fee</td>
+                <td>$1,500/partner</td>
+                <td>$1,500/partner</td>
+                <td class="highlight-col">$1,399/partner</td>
+                <td>$1,399/partner</td>
+                <td>Custom</td>
+              </tr>
+              <tr>
+                <td>One Time Setup Fee</td>
+                <td>Custom</td>
+                <td>Custom</td>
+                <td class="highlight-col">Custom</td>
+                <td>Custom</td>
+                <td>Custom</td>
+              </tr>
+
+              <!-- Capacity -->
+              <tr class="category-row">
+                <td colspan="6">Capacity</td>
+              </tr>
+              <tr>
+                <td>Max eCommerce Connectors</td>
+                <td>1</td>
+                <td>2</td>
+                <td class="highlight-col">5</td>
+                <td>10</td>
+                <td>Custom</td>
+              </tr>
+              <tr>
+                <td>Max EDI Trading Partners</td>
+                <td>1</td>
+                <td>2</td>
+                <td class="highlight-col">5</td>
+                <td>10</td>
+                <td>Custom</td>
+              </tr>
+
+              <!-- Connectivity -->
+              <tr class="category-row">
+                <td colspan="6">Connectivity</td>
+              </tr>
+              <tr>
+                <td>SFTP</td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td class="highlight-col"><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>Managed SFTP</td>
+                <td><span class="x-mark">✗</span></td>
+                <td><span class="check">✓</span></td>
+                <td class="highlight-col"><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>AS2</td>
+                <td><span class="x-mark">✗</span></td>
+                <td><span class="check">✓</span></td>
+                <td class="highlight-col"><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>API</td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td class="highlight-col"><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+
+              <!-- Support & Monitoring -->
+              <tr class="category-row">
+                <td colspan="6">Support & Monitoring</td>
+              </tr>
+              <tr>
+                <td>24/7 System Monitoring & Error Alerting</td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td class="highlight-col"><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>Support Levels</td>
+                <td>Email</td>
+                <td>Email / Priority</td>
+                <td class="highlight-col">Email / Priority / Dedicated CSM</td>
+                <td>Email / Priority / Dedicated CSM</td>
+                <td>Email / Priority / Dedicated CSM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Get Started?</h2>
+          <p>
+            Contact our team to discuss which plan is right for your business, or start with a demo.
+          </p>
+          <div class="button-group">
+            <a href="support" class="button button-primary">Contact Sales</a>
+            <a href="/#ecommerce" class="button button-secondary">View Features</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p><span data-copyright-year>&copy; 2025 ClearEDI Inc. All rights reserved.</span></p>
+        <p style="margin-top: 8px">
+          <a href="privacy-policy" style="color: #0270d7; margin: 0 12px"
+            >Privacy Policy</a
+          >
+          |
+          <a href="terms-of-service" style="color: #0270d7; margin: 0 12px"
+            >Terms of Service</a
+          >
+          |
+          <a href="acceptable-use" style="color: #0270d7; margin: 0 12px"
+            >Acceptable Use</a
+          >
+          |
+          <a href="support" style="color: #0270d7; margin: 0 12px"
+            >Support</a
+          >
+        </p>
+        <p style="margin-top: 16px; font-size: 14px; color: #64748b">
+          ClearEDI Inc.<br />
+          <a href="mailto:contact@clearedi.io" style="color: #0270d7"
+            >contact@clearedi.io</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Navigation Script -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove("active");
+        }
+      });
+    </script>
+    <script src="dist/js/copyright.js"></script>
+  </body>
+</html>
